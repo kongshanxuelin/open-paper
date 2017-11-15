@@ -1,6 +1,6 @@
 # 项目说明
 
-> 这是一个在线出试卷的小系统，前台代码采用Vue2编写，后台采用JSPTagEx，欢迎使用，[在线体验地址](https://wx.sumslack.com/)
+> 这是一个在线出试卷的小系统，前台代码采用[Vue2](https://github.com/vuejs/vue)编写，后台采用[JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，欢迎使用，[在线体验地址](https://wx.sumslack.com/)
 
 ## 运行项目
 
