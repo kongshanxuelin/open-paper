@@ -1,0 +1,401 @@
+@import "normalize";
+// Global
+// =================================================================
+
+// 风格字体颜色
+@color1: #0e1a18;
+@color2: #172422;
+@color3: #193d37;
+@color4: #136c5e;
+@color5: #61958d;
+@color6: #ffebc8;
+@color7: #f9c152;
+@color8: #ff9200;
+
+@color11: #121a18;
+@color12: #122024;
+@color13: #1e1f17;
+@color14: #11a1ff;
+@color15: #ff7d00;
+@color16: #888c8a;
+@color17: #a7269d;
+@color18: #b03030;
+
+@color21: #0a0f0e;
+@color22: #9ab9b9;
+@color23: #7ed321;
+
+@height1: 20px;
+@height1: 24px;
+@height1: 30px;
+
+@fontsize-header: 18px;
+@fontsize-normal: 14px;
+@fontsize-small: 12px;
+
+@colorLabel:#8f9598;
+@colorNormal:#ffebc8;
+// body背景色
+@body-bg: #0a0f0e;
+
+// link
+@a-color: #43adff;
+@a-hover-color:#79c4ff;
+
+// 默认字体颜色
+@text-color: #ffebc8;
+
+@text-color-yellow: #f9c66e;
+
+@text-color-disabled: #7f7f7f;
+
+// 默认字体大小
+@font-size-base: 14px;
+
+@font-size-small: 12px;
+// 默认字体粗细
+@font-weight: bold;
+// 默认字体家族
+@font-family-base: "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+
+@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+// 默认行高
+@line-height-base: 1.428571429;
+
+@line-height-small: 1.5;
+
+// Component
+// =================================================================
+
+// 圆角
+@border-radius-base: 4px;
+
+@border-radius-small: 2px;
+// 垂直padding
+@padding-base-vertical: 2px;
+// 水平padding
+@padding-base-horizontal: 5px;
+
+@padding-wide-horizontal: 15px;
+
+@popup-box-shadow: 0 2px 4px rgba(0,0,0,.5);
+
+@active-text-color: #000;
+
+@active-bg: #ff900c;
+
+@dropdown-bg: #092424;
+
+@dropdown-item-highlighted-bg: #295d5d;
+
+@dropdown-item-padding-vertical: @padding-base-vertical+1;
+
+@dropdown-item-padding-horizontal: @padding-base-horizontal+3;
+
+@dropdown-max-height: 208px;
+// Link
+// ==========================================================================
+
+// 链接颜色
+@link-color: #00c1ff;
+// 链接悬浮颜色
+@link-hover-color: #36ceff;
+
+@link-active-color: @link-hover-color;
+
+// Scrollbar
+// ==========================================================================
+
+@scrollbar-thumb-color: #194141;
+
+@scrollbar-thumb-hover-color: #3d9999;
+
+@scrollbar-thumb-active-color: #102c2c;
+
+@scrollbar-track-piece-color: #171d1a;
+
+// Button
+// ==========================================================================
+
+@btn-text-color: #fff;
+
+@btn-disabled-text-color: #929292;
+
+@btn-disabled-bg: #4a4c4b;
+
+@btn-bg: #136c5e;
+@btn-hover-bg: #168674;
+@btn-active-bg: #105b4f;
+
+@btn-warning-bg: #ff9200;
+@btn-warning-hover-bg: #ffaa38;
+@btn-warning-active-bg: #cc7500;
+
+@btn-default-bg: #4a4c4b;
+@btn-default-hover-bg: #767b79;
+@btn-default-active-bg: #2f3130;
+
+@btn-fatal-bg: #d52222;
+@btn-fatal-hover-bg: #eb3939;
+@btn-fatal-active-bg: #b61414;
+
+@btn-padding-base-vertical: @padding-base-vertical;
+
+@btn-padding-base-horizontal: @padding-wide-horizontal;
+
+// Input
+// ==========================================================================
+@input-border-color: #193d37;
+
+@input-addon-bg: #005959;
+
+@input-addon-color: #fff;
+
+@input-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .3);
+
+@input-text-color: #868c8b;
+
+@input-bg: #0e1a18;
+
+@input-hover-bg: #172422;
+
+@input-focus-bg: #ff7d00;
+
+@input-disabled-bg: #3e3e3e;
+
+@input-icon-padding: 16px+2*@padding-base-horizontal;
+
+@date-input-bg: #19473e;
+
+// Tab Group
+// ==========================================================================
+
+@tab-group-padding-vertical: @padding-base-vertical;
+
+@tab-group-padding-horizontal: @padding-wide-horizontal;
+
+@tab-group-active-bg: #e9942b;
+
+@tab-group-bg: #0f2425;
+
+@tab-group-text-color: @text-color;
+
+@tab-group-active-text-color: @active-text-color;
+
+// Datepicker
+// ==========================================================================
+
+@datepicker-border-color: #164649;
+
+@datepicker-bg: #031b1d;
+
+@datepicker-today-bg: #3a4f50;
+
+@datepicker-hover-bg: #15454a;
+
+@datepicker-active-text-color: @active-text-color;
+
+@datepicker-active-bg: @active-bg;
+
+@datepicker-highlight-text-color: @text-color-yellow;
+
+@datepicker-disabled-text-color: #363636;
+
+// Check Groupt
+// ==========================================================================
+
+@check-group-bg: #174444;
+
+@check-group-active-text-color: @active-text-color;
+
+@check-group-active-bg: @active-bg;
+
+// Tooltip
+// ==========================================================================
+
+@tooltip-min-width: 50px;
+
+@tooltip-max-width: 500px;
+
+@tooltip-border-color: #365050;
+
+@tooltip-bg: #203e3e;
+
+@tooltip-content-padding: 4px 8px;
+
+// DataTable
+// ==========================================================================
+@datatable-head-row-bg: #000;
+
+@datatable-odd-row-bg: #121716;
+
+@datatable-even-row-bg: #040b0b;
+
+@datatable-row-hover-bg: #132624;
+
+@datatable-row-selected-bg: #0d3b37;
+
+@datatable-td-padding: 6px 10px;
+
+@datatable-sorting-caret-size: 5px;
+
+@datatable-sorting-caret-color: #51aba0;
+
+// Select
+// ==========================================================================
+
+@select-addon-box-shadow: -1px 0 1px rgba(0,0,0,.2), inset 0 0 1px rgba(255,255,255,.2);
+
+@select-dropdown-padding-vertical: @dropdown-item-padding-vertical;
+
+@select-dropdown-padding-horizontal: @dropdown-item-padding-horizontal;
+
+@select-search-padding-vertical : @padding-base-vertical+1;
+
+@select-search-padding-horizontal : @padding-base-vertical+1;
+
+// Autocomplete
+// ==========================================================================
+
+// Panel/menu
+// ==========================================================================
+@panel-main-color: #1d595b;
+@panel-title-color: #ffebc8;
+@panel-header-border-radius: 2px 2px 0px 0px;
+@panel-content-bg: #1D1E20;
+
+// validate
+// ==========================================================================
+@validate-error-color: #f00;
+
+// Accordion
+// ==========================================================================
+@Accordion-border-color: #1d595b;
+@Accordion-background-color: #1d595b;
+
+// progressbar
+// ==========================================================================
+@progressbar-value-border: #416a6b;
+@progressbar-value-bg: #1c7b80;
+
+
+// spinner
+// ==========================================================================
+@spinner-border-color:#242527;
+@spinner-bg-color:#6e6c49;
+@spinner-btn-border-color:#416a6b;
+@spinner-btn-bg-color:#1c7b80;
+
+
+.user-select(@value) {
+  user-select: @value;
+  -moz-user-select: @value;
+  -ms-user-select: @value;
+  -webkit-user-select: @value;
+}
+
+.control-size(@font-size; @line-height; @padding-vertical; @padding-horizontal; @border-color; @border-radius) {
+  font-size: @font-size;
+  line-height: @line-height;
+  padding: @padding-vertical @padding-horizontal;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+}
+
+.bg-img(@background-image; @background-repeat; @background-position) {
+  background-image: @background-image;
+  background-repeat: @background-repeat;
+  background-position: @background-position;
+}
+
+.input-icon-left(@image; @background-position) {
+  @background-image: url(@image);
+  .bg-img(@background-image; no-repeat; @background-position);
+  padding-left: @input-icon-padding;
+}
+
+.input-icon-right(@image; @background-position) {
+  @background-image: url(@image);
+  .bg-img(@background-image; no-repeat; @background-position);
+  padding-right: @input-icon-padding;
+}
+
+.list-unstyle() {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.caret-up(@size, @color) {
+  display: inline-block;
+  border-bottom: @size solid @color;
+  border-left: @size solid transparent;
+  border-right: @size solid transparent;
+}
+
+.caret-down(@size, @color) {
+  display: inline-block;
+  border-top: @size solid @color;
+  border-left: @size solid transparent;
+  border-right: @size solid transparent;
+}
+
+.caret-left(@size, @color) {
+  display: inline-block;
+  border-right: @size solid @color;
+  border-top: @size solid transparent;
+  border-bottom: @size solid transparent;
+}
+
+.caret-right(@size, @color) {
+  display: inline-block;
+  border-left: @size solid @color;
+  border-top: @size solid transparent;
+  border-bottom: @size solid transparent;
+}
+
+
+
+/* Core
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  font-family: @font-family-base;
+  background-color: @body-bg;
+  color: @text-color;
+  font-weight: @font-weight;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+  &:active {
+    color: @link-active-color;
+  }
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: @font-family-monospace;
+}

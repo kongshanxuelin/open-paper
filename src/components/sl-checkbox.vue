@@ -1,0 +1,164 @@
+<style lang="scss">
+  .checkbox-component {
+  > input {
+      opacity: 0;
+      position: absolute;
+
+  + label > .input-box {
+      display: inline-block;
+      border:2px solid #253936;
+      border-radius:2px;
+      margin: 0;
+      padding: 0;
+      width: 1em;
+      height: 1em;
+      font-size:1.4em;
+      background: #0a0f0e;
+      overflow: hidden;
+      vertical-align: -5%;
+      user-select: none;
+
+  > .input-box-tick {
+      width: 100%;
+      height: 100%;
+
+  > path {
+      opacity: 0;
+      stroke: #f9c152;
+      stroke-width: 2.3px;
+      stroke-dashoffset: 20;
+      stroke-dasharray: 20;
+      transition: stroke-dashoffset 0.15s ease-in;
+    }
+  }
+  }
+
+  &:checked + label > .input-box > .input-box-tick > path {
+     opacity: 1;
+     stroke-dashoffset: 0;
+   }
+
+  &:focus + label > .input-box {
+     box-shadow: 0 0 2px 3px rgba(115, 185, 255, 0.69);
+   }
+  }
+  }
+</style>
+
+<template>
+  <span class="checkbox-component">
+    <input type="checkbox"
+           :id="id"
+           :name="name"
+           :value="value"
+           :class="className"
+           :required="required"
+           @change="onChange"
+           :checked="state">
+    <label :for="id">
+      <slot name="input-box">
+                <span class="input-box">
+                    <svg class="input-box-tick" viewBox="0 0 16 16">
+                      <path fill="none" d="M1.7,7.8l3.8,3.4l9-8.8"></path>
+                    </svg>
+                </span>
+      </slot>
+      <slot></slot>
+    </label>
+  </span>
+</template>
+
+<script>
+  export default {
+    model: {
+      prop: 'modelValue',
+      event: 'input'
+    },
+
+    props: {
+      id: {
+        type: String,
+        default: function () {
+          return 'checkbox-id-' + this._uid;
+        },
+      },
+      name: {
+        type: String,
+        default: null,
+      },
+      value: {
+        type: [String, Boolean],
+        default: null,
+      },
+      modelValue: {
+        type: [String, Boolean, Array],
+        default: undefined,
+      },
+      className: {
+        type: String,
+        default: null,
+      },
+      checked: {
+        type: Boolean,
+        default: false,
+      },
+      required: {
+        type: Boolean,
+        default: false,
+      },
+      model: {}
+    },
+
+    computed: {
+      state () {
+    if (this.modelValue === undefined) {
+      return this.checked;
+    }
+
+    if (Array.isArray(this.modelValue)) {
+      return this.modelValue.indexOf(this.value) > -1;
+    }
+
+    return !!this.modelValue;
+  }
+  },
+
+  methods: {
+    onChange() {
+      this.toggle();
+    },
+
+    toggle() {
+      let value;
+
+      if (Array.isArray(this.modelValue)) {
+        value = this.modelValue.slice(0);
+
+        if (this.state) {
+          value.splice(value.indexOf(this.value), 1);
+        } else {
+          value.push(this.value);
+        }
+      } else {
+        value = !this.state;
+      }
+
+      this.$emit('input', value);
+    }
+  },
+
+  watch: {
+    checked(newValue) {
+      if (newValue !== this.state) {
+        this.toggle();
+      }
+    }
+  },
+
+  mounted() {
+    if (this.checked && !this.state) {
+      this.toggle();
+    }
+  },
+  };
+</script>
