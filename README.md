@@ -1,8 +1,21 @@
-# 项目说明
+Open Paper System
+=========================
+[![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://wx.sumslack.com/)
 
-> 这是一个在线出试卷的小系统，前台代码采用[Vue2](https://github.com/vuejs/vue)编写，后台采用[JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，欢迎使用，[在线体验地址](https://wx.sumslack.com/)
+# Description
 
-## 运行项目
+
+> This is a papaer system ,written by [Vue2](https://github.com/vuejs/vue) and  [JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，[Live Demo](https://wx.sumslack.com/)
+
+
+# Requirements
+------------
+
+* Bash(git、ssh)
+* npm
+* jdk8+
+
+## Installation
 
 ``` bash
 
@@ -16,3 +29,5 @@ npm run dev
 npm run build
 
 ```
+
+![](http://h5.sumslack.com/222.png)
