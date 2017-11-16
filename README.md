@@ -30,4 +30,13 @@ npm run build
 
 ```
 
+## Screenshots
 ![](http://h5.sumslack.com/222.png)
+
+## CHANGELOG
+- V1.0.0
+    - SPA
+    - 支持题型：单选，多选，填空和简答
+    - 支持移动端
+    - 支持微信分享和小程序分享
+    - 管理：添加试卷，试题管理等；
