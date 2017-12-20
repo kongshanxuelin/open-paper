@@ -17,6 +17,7 @@
                 <span>{{(index+1) + '/' + banners.length}} ： </span>
                 <span class="sl-label2">
                   {{banner.d}}
+                  <img v-if="banner.img && banner.img!='' && banner.img.indexOf('http')==0" style="width:90%;" :src="banner.img" border=0/>
                   <span v-if="banner.t === 'input'">
                     <input type='text' v-model="ans[banner.id]" class="sl-input" style="width:60px" />
                   </span>
@@ -110,6 +111,7 @@ export default {
               }
 
           });
+          console.log(paper.queses)
           this.banners = paper.queses;
       });
   },

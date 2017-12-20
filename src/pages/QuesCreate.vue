@@ -32,7 +32,7 @@
                 :max-file-size="5242880"
                 :url="uploadUrl">
                 <span v-if="!showImage">点击上传</span>
-                <img v-else :src="paper.logo" />
+                <img v-else :src="ques.img" />
                 </vue-core-image-upload>
          </div>
      </div>   
@@ -79,7 +79,7 @@ export default {
         quesId:"",
         paperId:"",  
         uploadUrl:Config.Ajax.uploadurl,
-        ques:{t:"radio",d:"",ans:"",img:"面试题",
+        ques:{t:"radio",d:"",ans:"",img:"",
         codes:[],
         codesValue:[],codesTypeValue:[],
         items:[],itemsValue:[],itemsImg:[]}
@@ -163,13 +163,16 @@ export default {
         this.ques.items.splice(index, 1);
     },
     imageuploaded(res){
+        console.log(res)
         if(typeof res === "string"){
-            res = res.substring(1,res.length-3);
+            res = res.substring(1,res.length-2);
             var ss = res.split(",");
+            
             if(typeof ss === "object"){
                 ss.forEach(item => {
                     if(item.trim().indexOf("path=")==0){
                         var path = item.trim().substring(5);
+                        this.showImage = true;
                         this.ques.img = Config.Ajax.uploadBaseUrl + path.trim();
                     }
                 });
