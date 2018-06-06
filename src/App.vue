@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">
+    <div class="header" v-if="isHeaderShow">
         <!--
         <button class="sl-btn default" @click="createQuestion">提交试题</button>&nbsp;
         <button class="sl-btn default" @click="myQuestion">我的试题</button>&nbsp;
@@ -23,7 +23,7 @@ export default {
   name: 'app',
   data(){
   	return {
-      
+      isHeaderShow:true
 			
 		}
   },
@@ -36,7 +36,11 @@ export default {
       console.log('mounted');
   },
   created(){
-  	this.height = window.screen.availHeight - 240;
+    this.height = window.screen.availHeight - 240;
+    
+    this.$root.eventHub.$on("header-show",target => {
+        this.isHeaderShow = target
+    });
   },
   methods:{
     goHome(){
