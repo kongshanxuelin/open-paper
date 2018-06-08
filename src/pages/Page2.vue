@@ -5,7 +5,7 @@
        <a class="sl-btn primary" @click="doShare" href="#">分享给朋友</a>
      </div>
       <div class="m20" v-if="showImg">
-        <img class="arrow" src="http://dev.vxtong.com/cases/nuannan/imgs/share-it.png">
+        <img class="arrow" src="http://h5.sumslack.com/share-it.png">
       </div>
   </div>
 </template>
@@ -38,8 +38,8 @@ export default {
         if(window.__wxjs_environment === 'miniprogram'){
           wx.miniProgram.navigateTo({url: '/pages/paper/share/index?rid='+this.$route.params.id});
         }else{
-          //this.$modal.alert("只能在小程序中分享！");
-          this.showImg = true;
+          this.$modal.alert("点击右上角更多菜单分享！");
+          //this.showImg = true;
         }
     }
 	}

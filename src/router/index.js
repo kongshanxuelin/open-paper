@@ -13,7 +13,9 @@ import ActCreate from '@/pages/ActCreate'
 import ActList from '@/pages/ActList'
 import ActDetail from '@/pages/ActDetail'
 
-
+import ActSetttingsSignin from '@/pages/SetSignin'
+import ActSetttingsTmpl from '@/pages/SetCusTmplDef'
+import ActSetttingsProcess from '@/pages/SetProcessDef'
 
 //end of Pages
 
@@ -243,6 +245,22 @@ export default new Router({
       name: 'actDetail',
       component: ActDetail
     },
+    {
+      path: '/act/settings/signin/:token',
+      name: 'actSeetingsSignin',
+      component: ActSetttingsSignin
+    },
+    {
+      path: '/act/settings/tmpl/:token',
+      name: 'actSeetingsTmpl',
+      component: ActSetttingsTmpl
+    },
+    {
+      path: '/act/settings/process/:token',
+      name: 'actSeetingsProcess',
+      component: ActSetttingsProcess
+    },
+
     {
       path: '/result/:id',
       name: 'result',
