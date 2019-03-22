@@ -61,7 +61,7 @@ export default {
      }
 
      wx.miniProgram.getEnv(function(res) {
-        that.isMini = res.miniprogram
+        that.isMini = res.miniprogram;
      })
 
      this.$ajax.get2(Config.Ajax.actBaseUrl,"wx/service/js_config",{

@@ -3,6 +3,7 @@ import SLRadio from './sl-radio'
 import SLSwitches from './sl-switches';
 import SLDatePicker from './sl-datepicker';
 import SLCollapse from './sl-collapse';
+import SLUploader from './sl-upload'
 import Promise from 'promise-polyfill'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 if (!window.Promise) {
@@ -18,6 +19,7 @@ export default {
     Vue.component('sl-collapse',SLCollapse);  
     Vue.component('sl-swiper', swiper);
     Vue.component('sl-swiper-slide', swiperSlide);
+    Vue.component('sl-uploader', SLUploader);
   }
 }
 

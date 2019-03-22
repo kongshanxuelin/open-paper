@@ -17,6 +17,8 @@ import ActSetttingsSignin from '@/pages/SetSignin'
 import ActSetttingsTmpl from '@/pages/SetCusTmplDef'
 import ActSetttingsProcess from '@/pages/SetProcessDef'
 
+import Fenci from '@/pages/FenCi'
+
 //end of Pages
 
 import SLComponent from "@/router/component.js"
@@ -198,6 +200,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   linkActiveClass: 'active',
+  base:"/",
   routes: [
     {
       path: '/',
@@ -260,7 +263,11 @@ export default new Router({
       name: 'actSeetingsProcess',
       component: ActSetttingsProcess
     },
-
+    {
+      path: '/act/fenci/:token',
+      name: 'actFenci',
+      component: Fenci
+    },
     {
       path: '/result/:id',
       name: 'result',

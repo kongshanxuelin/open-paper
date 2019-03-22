@@ -2,10 +2,12 @@ Open Paper System
 =========================
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://wx.sumslack.com/)
 
+![](https://camo.githubusercontent.com/7230f9f34b4492efecf7fcfb169a59ac7524c304/687474703a2f2f68352e73756d736c61636b2e636f6d2f3232322e706e67)
+
 # Description
 
 
-> This is a papaer system ,written by [Vue2](https://github.com/vuejs/vue) and  [JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，[Live Demo](https://wx.sumslack.com/)
+> This is a papaer system ,written by [Vue2](https://github.com/vuejs/vue) and  [JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，[Live Demo](https://wx.sumslack.com/paper/1)
 
 
 # Requirements
@@ -30,9 +32,6 @@ npm run build
 
 ```
 
-## Screenshots
-![](http://h5.sumslack.com/222.png)
-
 ## CHANGELOG
 - V1.0.0
     - SPA
@@ -40,3 +39,6 @@ npm run build
     - 支持移动端
     - 支持微信分享和小程序分享
     - 管理：添加试卷，试题管理等；
+
+## 微信公众号
+![](https://www.sumslack.com/img/gzh.jpg)
