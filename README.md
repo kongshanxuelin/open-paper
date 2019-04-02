@@ -2,6 +2,8 @@ Open Paper System
 =========================
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://wx.sumslack.com/)
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+=========================
+
 ![](https://camo.githubusercontent.com/7230f9f34b4492efecf7fcfb169a59ac7524c304/687474703a2f2f68352e73756d736c61636b2e636f6d2f3232322e706e67)
 
 # Description
