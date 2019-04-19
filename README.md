@@ -11,6 +11,9 @@ Open Paper System
 
 > This is a papaer system ,written by [Vue2](https://github.com/vuejs/vue) and  [JSPTagEx](https://github.com/kongshanxuelin/jsptagex)，[Live Demo](https://wx.sumslack.com/paper/1)
 
+You can open it in WeChat(微信)，扫一扫:
+
+![](http://h5.sumslack.com/paper.jpg)
 
 # Requirements
 ------------
