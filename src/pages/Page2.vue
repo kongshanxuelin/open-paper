@@ -39,7 +39,7 @@ export default {
     doShare(){
         //this.showImg = true;
         if(window.__wxjs_environment === 'miniprogram'){
-          wx.miniProgram.navigateTo({url: '/pages/paper/share/index?rid='+this.$route.params.id});
+          wx.miniProgram.navigateTo({url: '/pages/grid-paper/share/index?rid='+this.$route.params.id});
         }else{
           this.$modal.alert("点击右上角更多菜单分享！");
           //this.showImg = true;
