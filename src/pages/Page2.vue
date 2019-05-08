@@ -29,7 +29,10 @@ export default {
           console.log(data)
           this.score = data.data.score;
           this.rate = data.data.rate;
-          this.msg = "您的分数为：<span class='sl-label-yellow'> " + this.score + "分 </span>，打败了 "+this.rate+" 的答题者!";
+          if(data.data.paper.lang.indexOf("题")>=0)
+            this.msg = "您的分数为：<span class='sl-label-yellow'> " + this.score + "分 </span>，打败了 "+this.rate+" 的答题者!";
+          else
+            this.msg = "感谢您的参与!";
       });
   },
   methods:{

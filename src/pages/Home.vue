@@ -2,12 +2,12 @@
    <div :style="{marginLeft:'10px',marginRight:'10px'}">
       <div class="header">
         <img :src="paper.logo" class="logo"></img>
-        <span class="title sl-label2" style="font-size:11px">
+        <div class="title sl-label2" style="font-size:11px;max-width:60%;">
         	{{paper.d}}
-        </span>
+        </div>
       </div>
       <div class="flex-column flex-right flex-middle" style="margin-bottom:10px">
-         <button class="sl-btn primary" @click="doSubmit">提交答卷</button>
+         <button class="sl-btn primary" @click="doSubmit">{{paper.lang.indexOf('题')>=0?'提交答卷':'提交问卷'}}</button>
       </div>
       <sl-swiper :options="swiperOption" class="swiper-box">
           <div class="swiper-pagination" slot="pagination"></div>
@@ -17,13 +17,16 @@
                 <span>{{(index+1) + '/' + banners.length}} ： </span>
                 <span class="sl-label2">
                   {{banner.d}}
-                  <img v-if="banner.img && banner.img!='' && banner.img.indexOf('http')==0" style="width:90%;" :src="banner.img" border=0/>
+                  
                   <span v-if="banner.t === 'input'">
                     <input type='text' v-model="ans[banner.id]" class="sl-input" style="width:60px" />
                   </span>
                   <div v-if="banner.t ==='textarea'" style="padding-left:10px;margin-top:10px;">
                       <textarea style="width:95%" rows=8 class="sl-input"  v-model="ans[banner.id]">
                       </textarea>
+                  </div>
+                  <div style="text-align:center;">
+                    <img v-if="banner.img && banner.img!='' && banner.img.indexOf('http')==0" :src="banner.img" border=0/>
                   </div>
                 </span>
               </div>
@@ -67,7 +70,7 @@ export default {
   	return {
   	  showBtn:false,
       ans:{},
-      paper:{logo:"http://h5.sumslack.com/es6.png",d:""},
+      paper:{logo:"http://h5.sumslack.com/es6.png",d:"",lang:"面试题"},
       banners: [],
       notNextTick: true,
       swiperOption: {
@@ -92,7 +95,7 @@ export default {
   	}
   },
   mounted(){
-      
+      this.$root.eventHub.$emit('header-show', false);   
   },
   created(){
       var that = this;
@@ -166,7 +169,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  
+  .header {
+    justify-content:center;
+  }
 	.code {
 		display: inline-block;padding:4px;background-color: #193d37;
   }

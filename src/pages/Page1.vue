@@ -3,7 +3,7 @@
       <div class="flex-item flex-row">
         <div :key="index" v-for="(item, index) in items" class="flex-item flex-column flex-middle m20">
           <div class="flex-item-12">
-            <img :src="item.logo" style="width:32px;height:32px;border-radius:50%;border:0;" border=0>
+            <img :src="item.logo" style="width:32px;height:32px;border-radius:50%;border:0;margin-right:4px;" border=0>
             <span @click="goPaper(item)">{{item.title}} </span>
           </div>
           <div class="flex-item-12" style="text-align:right;padding-right:10px;">

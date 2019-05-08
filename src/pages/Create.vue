@@ -23,11 +23,11 @@
          </div>
      </div>   
      <div class="flex-column mb20">
-         <div class="flex-item-12">其他:</div>
+         <div class="flex-item-12">其他(带"题"字需有答案):</div>
          <div class="flex-item-12"><input type="text" v-model="paper.lang" class="sl-input" style="width:90%"/></div>
      </div>    
      <div class="flex-row flex-middle flex-center mb20">
-         <button class="sl-btn primary" @click="paperCreate">{{this.paperId != "" ? "保存试卷" : "创建试卷"}}</button>
+         <button class="sl-btn primary" @click="paperCreate">{{this.paperId != "" ? "保存试卷/问卷" : "创建试卷/问卷"}}</button>
      </div>    
 
   </div>
@@ -98,9 +98,11 @@ export default {
             var ss = res.split(",");
             if(typeof ss === "object"){
                 ss.forEach(item => {
+                    console.log("item:",item)
                     if(item.trim().indexOf("path=")==0){
                         var path = item.trim().substring(5);
                         console.log(path)
+                        if((path+"").endsWith("}")) path = path.substring(0,path.length-1);
                         this.paper.logo = Config.Ajax.uploadBaseUrl + path.trim();
                     }
                 });

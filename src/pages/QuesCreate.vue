@@ -15,7 +15,7 @@
              </select>    
          </div>
      </div>    
-     <div class="flex-column mb20">
+     <div class="flex-column mb20" v-if="paper.lang.indexOf('题')>=0">
          <div class="flex-item-12">问题答案:</div>
          <div class="flex-item-12">
              <input type="text" v-model="ques.ans" class="sl-input" style="width:90%"/>
@@ -57,7 +57,7 @@
                  代码{{index+1}}：<input name="codesType" type="text" class="sl-input" />&nbsp;<span class="sl-label2">注：输入java,javascript,css,html,python等</span>
                  </div>                 
                  <textarea style="width:90%;margin-bottom:5px" rows=5 class="sl-input" name="codes"></textarea>
-                 <i title="删除" class="icon sumscope-icon icon-close" style="font-size: 20px; color: #F00" @click="removeItemsByIndex(index)"></i>
+                 <i title="删除" class="icon sumscope-icon icon-close" style="font-size: 20px; color: #F00" @click="removeCodeByIndex(index)"></i>
              </div>    
          </div>  
      </div>
@@ -78,6 +78,7 @@ export default {
         showImage:false,
         quesId:"",
         paperId:"",  
+        paper:{d:"",lang:"",logo:"",id:""},
         uploadUrl:Config.Ajax.uploadurl,
         ques:{t:"radio",d:"",ans:"",img:"",
         codes:[],
@@ -94,14 +95,11 @@ export default {
      }else{
           this.paperId = this.$route.params.id;
      }
-    //  if(this.paperId!=""){
-    //      this.$ajax.get("paper/detail.jhtml",{id:this.paperId}).then(data => {
-    //          this.paper = data.data.paper;
-    //          if(data.data.paper.logo!=""){
-    //              this.showImage = (data.data.paper.logo!="");
-    //          }
-    //      });
-    //  }
+     if(this.paperId!=""){
+         this.$ajax.get("paper/detail.jhtml",{id:this.paperId}).then(data => {
+             this.paper = data.data.paper;
+         });
+     }
   },
   methods:{
     quesCreate(){
@@ -160,7 +158,10 @@ export default {
        this.ques.codes.push("") 
     },
     removeItemsByIndex(index){
-        this.ques.items.splice(index, 1);
+       this.ques.items.splice(index, 1);
+    },
+    removeCodeByIndex(index){
+       this.ques.codes.splice(index, 1);
     },
     imageuploaded(res){
         console.log(res)
@@ -173,6 +174,7 @@ export default {
                     if(item.trim().indexOf("path=")==0){
                         var path = item.trim().substring(5);
                         this.showImage = true;
+                        if((path+"").endsWith("}")) path = path.substring(0,path.length-1);
                         this.ques.img = Config.Ajax.uploadBaseUrl + path.trim();
                     }
                 });
